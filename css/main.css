@@ -1,0 +1,99 @@
+*{
+    padding: 0;
+    margin: 0; 
+    box-sizing: border-box; 
+  }
+  @font-face{
+    font-family: Roboto;
+    src: url(../fonts/Roboto-Regular.ttf);
+ 
+  }
+
+  body{
+     background-color: burlywood;
+     background-image: url(../images/image2.jpg);
+     background-size: 100%;
+  }
+  
+  
+  .photo{
+      width: 200px;
+      height: 200px;
+      margin: 10px;
+      background-color: orange;
+      transition: all 1s ease;
+      border: 2px gold;
+      border-radius: 200px;
+      box-shadow:  2px 2px greenyellow;
+  }
+
+  .photo:hover{
+    transform: rotate(360deg) scale(2.5);
+
+  }
+  main{
+      width: 70%;
+      padding: 50px;
+      margin: auto;
+      background-color: #fff;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+  }
+  
+  h1{
+     width: 100%; 
+     text-align: center;
+     font-size: 48px;
+  }
+  .photo1{
+      background-image: url(../images/1262772929.jpg);
+      background-size: 100%;
+  }
+  .photo2{
+    background-image: url(../images/imaaage.jpg);
+      background-size: 100%;   
+  }
+  .photo3{
+    background-image: url(../images/maxresdefault.jpg);
+    background-size: 100%;
+  }
+  .photo4{
+    background-image: url(../images/darth-revan-1200x630.jpg);
+    background-size: 100%;
+  }
+  .photo5{
+    background-image: url(../images/20cbb32f665384fab9bdfb6651e1e00f.jpg);
+    background-size: 100%;
+  }
+  .photo6{
+    background-image: url(../images/image6.jpg);
+    background-size: 100%;
+  }
+  .photo7{
+    background-image: url(../images/image7.jpg);
+    background-size: 100%;
+  }
+  .photo8{
+    background-image: url(../images/image8.jpg);
+    background-size: 100%;
+  }
+  .photo9{
+    background-image: url(../images/image7.jpg);
+    background-size: 100%;
+  }
+  .photo10{
+    background-image: url(../images/image10.jpg);
+    background-size: 100%;
+  }
+  .photo11{
+    background-image: url(../images/image8.jpg);
+    background-size: 100%;
+  }
+  .photo12{
+    background-image: url(../images/image9.jpg);
+    background-size: 100%;
+  }
+
+
+
