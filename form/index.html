@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,500&map;subset=cyrillic">
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        html{
+            text-align: center;
+            font-size: 16px;
+        }
+        body{
+            margin: 0;
+            font-family: "Roboto", sans-serif;
+            background-color: #f2f2f2;
+        }
+        .form-container{
+            background-color: #fff;
+            max-width: 450px;
+            width: 95%;
+            margin: auto;
+            margin-top: 50px; 
+            padding: 40px;
+            box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.9);
+        }
+
+        #form{
+
+        }
+
+        input{
+            display: block;
+            width: 100%;
+            margin: 0.5rem 0;
+            padding: 0.4rem 0;
+            outline: none;
+            font-size: 1rem;
+            letter-spacing: 0.75px;
+            border: none;
+            border-bottom: 1.5px solid rgb(200, 200, 200);
+            border-radius: 0;
+            transition: 1s ease;
+        }
+
+        input:focus{
+            /* HEX */
+            border-color: #ffbf02;
+            border-color: rgb(255, 191, 2);
+        }
+
+        .form-heading{
+            margin-top: 0;
+            font-size: 1.5rem;
+            font-weight: 500;
+            letter-spacing: 0.75px;
+        }
+
+        #submit{
+            border: none;
+            background-color: #ffbf02;
+            color: #fff;
+            text-shadow: rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            padding: 0.6rem 0;
+            width: 150px;
+            margin-left: calc(100% - 150px);
+            box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            margin-top: 1.5rem;
+            transition: 0.5s ease;
+        }
+
+        #submit:active{
+            transform: translate(5px, 5px);
+            box-shadow: 0;
+        }
+
+        label{
+            display: block;
+            font-size: 0.9rem;
+            letter-spacing: 0.75px;
+            color: rgb(68, 68, 68);
+            transform: translateY(2rem);
+            transition: 0.5s ease;
+        }
+
+        .focused{
+            transform: translateX(-12.5%) translateY(0.2rem) scale(0.75);
+        }
+
+        input:-webkit-autofill{
+            -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+        }
+
+
+
+    </style>
+    <title>Форма обратной связи</title>
+</head>
+<body>
+    <div class="form-container">
+        <h3 class="form-heading">Форма обратной связи</h3>
+        <form action="https://getsimpleform.com/messages?form_api_token=5dafb72485e4d94e34a9db3fd052fda2" method="post">
+            <!-- the redirect_to is optional, the form will redirect to the referrer on submission -->
+            <input type='hidden' name='redirect_to' value='https://youtube.com'/>  
+            <div class="field">
+                <label for="name">Имя и фамилия</label>
+                <input type="text" id="name" name="name">   
+            </div>
+            <div class="field">
+                <label for="email">Адрес эл.почты</label>
+                <input type="email" id="email" name="_replyto"> 
+            </div>
+            <input type="submit" id="submit">
+        </form>
+    </div>
+
+    <script>
+        var inputs = [].slice.call(document.getElementsByTagName("input"));
+
+        console.log(inputs);
+
+        inputs.forEach(function(input){
+            if((input.getAttribute("type") !=="submit") && (input.getAttribute("type") !== "hidden")){        
+                console.log(input);
+                if(input.value != ''){
+                    var label = document.querySelector('label[for="' + input.id + '"]');
+                    label.classList.add("focused");
+                    console.log("lol");
+                }  
+            input.addEventListener("focusin", focusInHandler);
+            input.addEventListener("focusout", focusOutHandler);
+            }            
+        });
+    
+        function focusInHandler(){
+            var label = document.querySelector('label[for="' + this.id + '"]');
+            label.classList.add("focused");
+         //   console.log(label);
+         //  console.log(this.id + " focus in");
+        }
+
+        function focusOutHandler(){
+            var label = document.querySelector('label[for="' + this.id + '"]');
+          //   console.log(label);
+          //   console.log(this.id + " focus out");
+          if(this.value == ''){
+              label.classList.remove("focused");
+          }
+        }
+    </script>
+</body>
+</html>
